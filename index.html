@@ -12,6 +12,7 @@
         #sentence {
             font-size: 1.2em;
             margin-bottom: 20px;
+            transition: all 1s ease;
         }
         #input {
             font-size: 1.2em;
@@ -22,6 +23,16 @@
             padding: 10px 20px;
             font-size: 1em;
             cursor: pointer;
+        }
+        .crazy-animation {
+            animation: spinAndColorChange 2s infinite;
+        }
+        @keyframes spinAndColorChange {
+            0% { transform: rotate(0deg); color: red; }
+            25% { transform: rotate(90deg); color: blue; }
+            50% { transform: rotate(180deg); color: green; }
+            75% { transform: rotate(270deg); color: purple; }
+            100% { transform: rotate(360deg); color: orange; }
         }
     </style>
 </head>
@@ -39,6 +50,7 @@
             var userInput = document.getElementById('input').value.trim().toLowerCase();
             if (userInput === 'together') {
                 document.getElementById('result').innerHTML = 'Congratulations! You solved it!';
+                document.getElementById('sentence').classList.add('crazy-animation');
                 // You can add code here to move to the next level or do something else
             } else {
                 document.getElementById('result').innerHTML = 'Sorry, try again!';
