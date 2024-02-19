@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Together We Can Achieve More: Word Puzzle Edition</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #sentence {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        #input {
+            font-size: 1.2em;
+            width: 300px;
+            padding: 5px;
+        }
+        #check-btn {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Together We Can Achieve More: Word Puzzle Edition</h1>
+    <div id="sentence">We can achieve more ____ if we work as a team.</div>
+    <input type="text" id="input" placeholder="Enter 'together'">
+    <br><br>
+    <button id="check-btn">Check</button>
+    
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('check-btn').addEventListener('click', function() {
+            var userInput = document.getElementById('input').value.trim().toLowerCase();
+            if (userInput === 'together') {
+                document.getElementById('result').innerHTML = 'Congratulations! You solved it!';
+                // You can add code here to move to the next level or do something else
+            } else {
+                document.getElementById('result').innerHTML = 'Sorry, try again!';
+            }
+        });
+    </script>
+</body>
+</html>
